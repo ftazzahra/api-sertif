@@ -1,0 +1,1520 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/jurusan:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: 'Gets a data Jurusan'
+      parameters:
+        -
+          in: query
+          name: page_size
+          description: 'Size per page. Defaults to 20.'
+          example: 20
+          required: true
+          schema:
+            type: integer
+            description: 'Size per page. Defaults to 20.'
+            example: 20
+        -
+          in: query
+          name: page
+          description: 'Page to view.'
+          example: 3
+          required: false
+          schema:
+            type: integer
+            description: 'Page to view.'
+            example: 3
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'list data'
+                  data:
+                    -
+                      id: 1
+                      nama_jurusan: 'Rekayasa Perangkat Lunak'
+                      singkatan: RPL
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 2
+                      nama_jurusan: 'Tata Busana'
+                      singkatan: TB
+                      created_at: '2024-02-08T05:54:45.000000Z'
+                      updated_at: '2024-02-08T05:54:45.000000Z'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'list data'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        nama_jurusan: 'Rekayasa Perangkat Lunak'
+                        singkatan: RPL
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 2
+                        nama_jurusan: 'Tata Busana'
+                        singkatan: TB
+                        created_at: '2024-02-08T05:54:45.000000Z'
+                        updated_at: '2024-02-08T05:54:45.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        nama_jurusan:
+                          type: string
+                          example: 'Rekayasa Perangkat Lunak'
+                        singkatan:
+                          type: string
+                          example: RPL
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - 'API Jurusan'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Jurusan'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama_jurusan:
+                  type: string
+                  description: 'Name of Jurusan.'
+                  example: 'Rekayasa Internet.'
+                singkatan:
+                  type: string
+                  description: ''
+                  example: quo
+                Singkatan:
+                  type: string
+                  description: 'Singkatan of Jurusan.'
+                  example: RIT.
+              required:
+                - nama_jurusan
+                - singkatan
+                - Singkatan
+      security: []
+  '/api/jurusan/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'detail data'
+                  data: null
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'detail data'
+                  data:
+                    type: string
+                    example: null
+      tags:
+        - 'API Jurusan'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Jurusan'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Jurusan'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Jurusan ID'
+        example: 9
+        required: true
+        schema:
+          type: integer
+  /api/ptk:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      Nama: ogi
+                      NUPTK: '0888'
+                      JK: Laki-laki
+                      TempatLahir: pasuruan
+                      TanggalLahir: null
+                      NIP: '09838783'
+                      StatusKepegawaian: guru
+                      JenisPTK: guru
+                      Agama: islam
+                      AlamatJalan: mangga
+                      RT: 2
+                      RW: 4
+                      NamaDusun: pagak
+                      Desa_Kelurahan: null
+                      Kecamatan: pagak
+                      KodePos: 65784
+                      Telepon: null
+                      HP: '8484934893'
+                      Email: ogi@gmail.com
+                      id_tugas_tambahan: null
+                      SKCPNS: null
+                      TanggalCPNS: null
+                      SKPengangkatan: null
+                      TMTPengangkatan: null
+                      LembagaPengangkatan: null
+                      PangkatGolongan: bnsp
+                      SumberGaji: dinda
+                      NamaIbuKandung: dinda
+                      StatusPerkawinan: null
+                      NamaSuamin_Istri: dinda
+                      NIPSuami_Istri: dinda
+                      PekerjaanSuami_Istri: dinda
+                      TMTPNS: null
+                      SudahLisensiKepalaSekolah: null
+                      PernahDiklatKepengawasan: dinda
+                      KeahlianBraille: null
+                      KeahlianBahasaIsyarat: null
+                      NPWP: dinda
+                      NamaWajibPajak: dinda
+                      Kewarganegaraan: dinda
+                      Bank: dinda
+                      NomorRekeningBank: dinda
+                      RekeningAtasNama: dinda
+                      NIK: dinda
+                      NOKK: dinda
+                      Karpeg: dinda
+                      Karis_Karsu: dinda
+                      Lintang: dinda
+                      Bujur: dinda
+                      NUKS: 88
+                      Password: dinda
+                  message: 'Data Tahun Ajaran.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        Nama: ogi
+                        NUPTK: '0888'
+                        JK: Laki-laki
+                        TempatLahir: pasuruan
+                        TanggalLahir: null
+                        NIP: '09838783'
+                        StatusKepegawaian: guru
+                        JenisPTK: guru
+                        Agama: islam
+                        AlamatJalan: mangga
+                        RT: 2
+                        RW: 4
+                        NamaDusun: pagak
+                        Desa_Kelurahan: null
+                        Kecamatan: pagak
+                        KodePos: 65784
+                        Telepon: null
+                        HP: '8484934893'
+                        Email: ogi@gmail.com
+                        id_tugas_tambahan: null
+                        SKCPNS: null
+                        TanggalCPNS: null
+                        SKPengangkatan: null
+                        TMTPengangkatan: null
+                        LembagaPengangkatan: null
+                        PangkatGolongan: bnsp
+                        SumberGaji: dinda
+                        NamaIbuKandung: dinda
+                        StatusPerkawinan: null
+                        NamaSuamin_Istri: dinda
+                        NIPSuami_Istri: dinda
+                        PekerjaanSuami_Istri: dinda
+                        TMTPNS: null
+                        SudahLisensiKepalaSekolah: null
+                        PernahDiklatKepengawasan: dinda
+                        KeahlianBraille: null
+                        KeahlianBahasaIsyarat: null
+                        NPWP: dinda
+                        NamaWajibPajak: dinda
+                        Kewarganegaraan: dinda
+                        Bank: dinda
+                        NomorRekeningBank: dinda
+                        RekeningAtasNama: dinda
+                        NIK: dinda
+                        NOKK: dinda
+                        Karpeg: dinda
+                        Karis_Karsu: dinda
+                        Lintang: dinda
+                        Bujur: dinda
+                        NUKS: 88
+                        Password: dinda
+                    items:
+                      type: object
+                      properties:
+                        Nama:
+                          type: string
+                          example: ogi
+                        NUPTK:
+                          type: string
+                          example: '0888'
+                        JK:
+                          type: string
+                          example: Laki-laki
+                        TempatLahir:
+                          type: string
+                          example: pasuruan
+                        TanggalLahir:
+                          type: string
+                          example: null
+                        NIP:
+                          type: string
+                          example: '09838783'
+                        StatusKepegawaian:
+                          type: string
+                          example: guru
+                        JenisPTK:
+                          type: string
+                          example: guru
+                        Agama:
+                          type: string
+                          example: islam
+                        AlamatJalan:
+                          type: string
+                          example: mangga
+                        RT:
+                          type: integer
+                          example: 2
+                        RW:
+                          type: integer
+                          example: 4
+                        NamaDusun:
+                          type: string
+                          example: pagak
+                        Desa_Kelurahan:
+                          type: string
+                          example: null
+                        Kecamatan:
+                          type: string
+                          example: pagak
+                        KodePos:
+                          type: integer
+                          example: 65784
+                        Telepon:
+                          type: string
+                          example: null
+                        HP:
+                          type: string
+                          example: '8484934893'
+                        Email:
+                          type: string
+                          example: ogi@gmail.com
+                        id_tugas_tambahan:
+                          type: string
+                          example: null
+                        SKCPNS:
+                          type: string
+                          example: null
+                        TanggalCPNS:
+                          type: string
+                          example: null
+                        SKPengangkatan:
+                          type: string
+                          example: null
+                        TMTPengangkatan:
+                          type: string
+                          example: null
+                        LembagaPengangkatan:
+                          type: string
+                          example: null
+                        PangkatGolongan:
+                          type: string
+                          example: bnsp
+                        SumberGaji:
+                          type: string
+                          example: dinda
+                        NamaIbuKandung:
+                          type: string
+                          example: dinda
+                        StatusPerkawinan:
+                          type: string
+                          example: null
+                        NamaSuamin_Istri:
+                          type: string
+                          example: dinda
+                        NIPSuami_Istri:
+                          type: string
+                          example: dinda
+                        PekerjaanSuami_Istri:
+                          type: string
+                          example: dinda
+                        TMTPNS:
+                          type: string
+                          example: null
+                        SudahLisensiKepalaSekolah:
+                          type: string
+                          example: null
+                        PernahDiklatKepengawasan:
+                          type: string
+                          example: dinda
+                        KeahlianBraille:
+                          type: string
+                          example: null
+                        KeahlianBahasaIsyarat:
+                          type: string
+                          example: null
+                        NPWP:
+                          type: string
+                          example: dinda
+                        NamaWajibPajak:
+                          type: string
+                          example: dinda
+                        Kewarganegaraan:
+                          type: string
+                          example: dinda
+                        Bank:
+                          type: string
+                          example: dinda
+                        NomorRekeningBank:
+                          type: string
+                          example: dinda
+                        RekeningAtasNama:
+                          type: string
+                          example: dinda
+                        NIK:
+                          type: string
+                          example: dinda
+                        NOKK:
+                          type: string
+                          example: dinda
+                        Karpeg:
+                          type: string
+                          example: dinda
+                        Karis_Karsu:
+                          type: string
+                          example: dinda
+                        Lintang:
+                          type: string
+                          example: dinda
+                        Bujur:
+                          type: string
+                          example: dinda
+                        NUKS:
+                          type: integer
+                          example: 88
+                        Password:
+                          type: string
+                          example: dinda
+                  message:
+                    type: string
+                    example: 'Data Tahun Ajaran.'
+      tags:
+        - 'API Ptk'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Ptk'
+      security: []
+  '/api/ptk/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - 'API Ptk'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Ptk'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Ptk'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the ptk.'
+        example: 13
+        required: true
+        schema:
+          type: integer
+  /api/rombel:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id_rombel: 1
+                      nama_rombel: teknik
+                      max_rombel: '20'
+                      id_walas: 1
+                      id_ptk: 1
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      created_at: 11/02/2024
+                      updated_at: 11/02/2024
+                    -
+                      id_rombel: 2
+                      nama_rombel: komunikasi
+                      max_rombel: '50'
+                      id_walas: 1
+                      id_ptk: 1
+                      id_tahun_ajaran: 2
+                      tahun_ajaran: '2023'
+                      created_at: 11/02/2024
+                      updated_at: 11/02/2024
+                    -
+                      id_rombel: 3
+                      nama_rombel: visual
+                      max_rombel: '12'
+                      id_walas: 1
+                      id_ptk: 1
+                      id_tahun_ajaran: 2
+                      tahun_ajaran: '2023'
+                      created_at: 11/02/2024
+                      updated_at: 11/02/2024
+                  message: 'data rombel'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_rombel: 1
+                        nama_rombel: teknik
+                        max_rombel: '20'
+                        id_walas: 1
+                        id_ptk: 1
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        created_at: 11/02/2024
+                        updated_at: 11/02/2024
+                      -
+                        id_rombel: 2
+                        nama_rombel: komunikasi
+                        max_rombel: '50'
+                        id_walas: 1
+                        id_ptk: 1
+                        id_tahun_ajaran: 2
+                        tahun_ajaran: '2023'
+                        created_at: 11/02/2024
+                        updated_at: 11/02/2024
+                      -
+                        id_rombel: 3
+                        nama_rombel: visual
+                        max_rombel: '12'
+                        id_walas: 1
+                        id_ptk: 1
+                        id_tahun_ajaran: 2
+                        tahun_ajaran: '2023'
+                        created_at: 11/02/2024
+                        updated_at: 11/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_rombel:
+                          type: integer
+                          example: 1
+                        nama_rombel:
+                          type: string
+                          example: teknik
+                        max_rombel:
+                          type: string
+                          example: '20'
+                        id_walas:
+                          type: integer
+                          example: 1
+                        id_ptk:
+                          type: integer
+                          example: 1
+                        id_tahun_ajaran:
+                          type: integer
+                          example: 1
+                        tahun_ajaran:
+                          type: string
+                          example: '2024'
+                        created_at:
+                          type: string
+                          example: 11/02/2024
+                        updated_at:
+                          type: string
+                          example: 11/02/2024
+                  message:
+                    type: string
+                    example: 'data rombel'
+      tags:
+        - 'API Rombel'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Rombel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama_rombel:
+                  type: string
+                  description: ''
+                  example: error
+                max_rombel:
+                  type: string
+                  description: ''
+                  example: dignissimos
+                id_walas:
+                  type: string
+                  description: ''
+                  example: est
+                id_tahun_ajaran:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - nama_rombel
+                - max_rombel
+                - id_walas
+                - id_tahun_ajaran
+      security: []
+  '/api/rombel/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id_rombel: 1
+                    nama_rombel: teknik
+                    max_rombel: '20'
+                    id_walas: 1
+                    id_ptk: 1
+                    id_tahun_ajaran: 1
+                    tahun_ajaran: '2024'
+                    created_at: 11/02/2024
+                    updated_at: 11/02/2024
+                  message: 'detail data dengan id 1'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id_rombel:
+                        type: integer
+                        example: 1
+                      nama_rombel:
+                        type: string
+                        example: teknik
+                      max_rombel:
+                        type: string
+                        example: '20'
+                      id_walas:
+                        type: integer
+                        example: 1
+                      id_ptk:
+                        type: integer
+                        example: 1
+                      id_tahun_ajaran:
+                        type: integer
+                        example: 1
+                      tahun_ajaran:
+                        type: string
+                        example: '2024'
+                      created_at:
+                        type: string
+                        example: 11/02/2024
+                      updated_at:
+                        type: string
+                        example: 11/02/2024
+                  message:
+                    type: string
+                    example: 'detail data dengan id 1'
+      tags:
+        - 'API Rombel'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Rombel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama_rombel:
+                  type: string
+                  description: ''
+                  example: ut
+                max_rombel:
+                  type: string
+                  description: ''
+                  example: porro
+                id_walas:
+                  type: string
+                  description: ''
+                  example: ut
+                id_tahun_ajaran:
+                  type: string
+                  description: ''
+                  example: laudantium
+              required:
+                - nama_rombel
+                - max_rombel
+                - id_walas
+                - id_tahun_ajaran
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Rombel'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the rombel.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/siswa:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id_siswa: 2
+                      nisn: '002'
+                      nama: iina
+                      id_jurusan: 2
+                      id_rombel: 1
+                      jk: '1'
+                      kelas: '10'
+                      created_at: 12/02/2024
+                      updated_at: 12/02/2024
+                  message: 'Data Tahun Ajaran.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_siswa: 2
+                        nisn: '002'
+                        nama: iina
+                        id_jurusan: 2
+                        id_rombel: 1
+                        jk: '1'
+                        kelas: '10'
+                        created_at: 12/02/2024
+                        updated_at: 12/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_siswa:
+                          type: integer
+                          example: 2
+                        nisn:
+                          type: string
+                          example: '002'
+                        nama:
+                          type: string
+                          example: iina
+                        id_jurusan:
+                          type: integer
+                          example: 2
+                        id_rombel:
+                          type: integer
+                          example: 1
+                        jk:
+                          type: string
+                          example: '1'
+                        kelas:
+                          type: string
+                          example: '10'
+                        created_at:
+                          type: string
+                          example: 12/02/2024
+                        updated_at:
+                          type: string
+                          example: 12/02/2024
+                  message:
+                    type: string
+                    example: 'Data Tahun Ajaran.'
+      tags:
+        - 'API Siswa'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Siswa'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nisn:
+                  type: string
+                  description: ''
+                  example: et
+                nama:
+                  type: string
+                  description: ''
+                  example: facilis
+                id_jurusan:
+                  type: string
+                  description: ''
+                  example: libero
+                id_rombel:
+                  type: string
+                  description: ''
+                  example: aliquam
+                jk:
+                  type: string
+                  description: ''
+                  example: qui
+                kelas:
+                  type: string
+                  description: ''
+                  example: repellendus
+              required:
+                - nisn
+                - nama
+                - id_jurusan
+                - id_rombel
+                - jk
+                - kelas
+      security: []
+  '/api/siswa/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id_siswa: 2
+                    nisn: '002'
+                    nama: iina
+                    id_jurusan: 2
+                    id_rombel: 1
+                    jk: '1'
+                    kelas: '10'
+                    created_at: 12/02/2024
+                    updated_at: 12/02/2024
+                  message: 'detail data dengan id 2'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id_siswa:
+                        type: integer
+                        example: 2
+                      nisn:
+                        type: string
+                        example: '002'
+                      nama:
+                        type: string
+                        example: iina
+                      id_jurusan:
+                        type: integer
+                        example: 2
+                      id_rombel:
+                        type: integer
+                        example: 1
+                      jk:
+                        type: string
+                        example: '1'
+                      kelas:
+                        type: string
+                        example: '10'
+                      created_at:
+                        type: string
+                        example: 12/02/2024
+                      updated_at:
+                        type: string
+                        example: 12/02/2024
+                  message:
+                    type: string
+                    example: 'detail data dengan id 2'
+      tags:
+        - 'API Siswa'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Siswa'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Siswa'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the siswa.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/tahun-ajar:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      status: aktif
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                    -
+                      id_tahun_ajaran: 2
+                      tahun_ajaran: '2023'
+                      status: 'tidak aktif'
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                    -
+                      id_tahun_ajaran: 3
+                      tahun_ajaran: '2022'
+                      status: 'tidak aktif'
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                  message: 'Data Tahun Ajaran.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        status: aktif
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                      -
+                        id_tahun_ajaran: 2
+                        tahun_ajaran: '2023'
+                        status: 'tidak aktif'
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                      -
+                        id_tahun_ajaran: 3
+                        tahun_ajaran: '2022'
+                        status: 'tidak aktif'
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_tahun_ajaran:
+                          type: integer
+                          example: 1
+                        tahun_ajaran:
+                          type: string
+                          example: '2024'
+                        status:
+                          type: string
+                          example: aktif
+                        created_at:
+                          type: string
+                          example: 10/02/2024
+                        updated_at:
+                          type: string
+                          example: 10/02/2024
+                  message:
+                    type: string
+                    example: 'Data Tahun Ajaran.'
+      tags:
+        - 'API Tahun Ajaran'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Tahun Ajaran'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tahun_ajaran:
+                  type: string
+                  description: 'Tahun of Ajaran.'
+                  example: '2020.'
+                status:
+                  type: string
+                  description: ''
+                  example: reiciendis
+                Status:
+                  type: string
+                  description: 'Status of Tahun Ajaran.'
+                  example: Aktif.
+              required:
+                - tahun_ajaran
+                - status
+                - Status
+      security: []
+  '/api/tahun-ajar/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: '* Display the specified resource.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      status: aktif
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                    -
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      status: aktif
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        status: aktif
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                      -
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        status: aktif
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_tahun_ajaran:
+                          type: integer
+                          example: 1
+                        tahun_ajaran:
+                          type: string
+                          example: '2024'
+                        status:
+                          type: string
+                          example: aktif
+                        created_at:
+                          type: string
+                          example: 10/02/2024
+                        updated_at:
+                          type: string
+                          example: 10/02/2024
+      tags:
+        - 'API Tahun Ajaran'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Tahun Ajaran'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tahun_ajaran:
+                  type: string
+                  description: ''
+                  example: expedita
+                status:
+                  type: string
+                  description: ''
+                  example: sit
+              required:
+                - tahun_ajaran
+                - status
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Tahun Ajaran'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the tahun ajar.'
+        example: omnis
+        required: true
+        schema:
+          type: string
+  /api/walas:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id_walas: 1
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      id_ptk: 1
+                      Nama: ogi
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                  message: 'Data Tahun Ajaran.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_walas: 1
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        id_ptk: 1
+                        Nama: ogi
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_walas:
+                          type: integer
+                          example: 1
+                        id_tahun_ajaran:
+                          type: integer
+                          example: 1
+                        tahun_ajaran:
+                          type: string
+                          example: '2024'
+                        id_ptk:
+                          type: integer
+                          example: 1
+                        Nama:
+                          type: string
+                          example: ogi
+                        created_at:
+                          type: string
+                          example: 10/02/2024
+                        updated_at:
+                          type: string
+                          example: 10/02/2024
+                  message:
+                    type: string
+                    example: 'Data Tahun Ajaran.'
+      tags:
+        - 'API Walas '
+      security: []
+    post:
+      summary: ''
+      operationId: postApiWalas
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Walas '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_ptk:
+                  type: string
+                  description: ''
+                  example: laboriosam
+                id_tahun_ajaran:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - id_ptk
+                - id_tahun_ajaran
+      security: []
+  '/api/walas/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: '* Display the specified resource.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id_walas: 1
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      id_ptk: 1
+                      Nama: ogi
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                    -
+                      id_walas: 1
+                      id_tahun_ajaran: 1
+                      tahun_ajaran: '2024'
+                      id_ptk: 1
+                      Nama: ogi
+                      created_at: 10/02/2024
+                      updated_at: 10/02/2024
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id_walas: 1
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        id_ptk: 1
+                        Nama: ogi
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                      -
+                        id_walas: 1
+                        id_tahun_ajaran: 1
+                        tahun_ajaran: '2024'
+                        id_ptk: 1
+                        Nama: ogi
+                        created_at: 10/02/2024
+                        updated_at: 10/02/2024
+                    items:
+                      type: object
+                      properties:
+                        id_walas:
+                          type: integer
+                          example: 1
+                        id_tahun_ajaran:
+                          type: integer
+                          example: 1
+                        tahun_ajaran:
+                          type: string
+                          example: '2024'
+                        id_ptk:
+                          type: integer
+                          example: 1
+                        Nama:
+                          type: string
+                          example: ogi
+                        created_at:
+                          type: string
+                          example: 10/02/2024
+                        updated_at:
+                          type: string
+                          example: 10/02/2024
+      tags:
+        - 'API Walas '
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Walas '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_ptk:
+                  type: string
+                  description: ''
+                  example: nemo
+                id_tahun_ajaran:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - id_ptk
+                - id_tahun_ajaran
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Walas '
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the wala.'
+        example: eaque
+        required: true
+        schema:
+          type: string
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: 'API Jurusan'
+    description: "\nApis management"
+  -
+    name: 'API Ptk'
+    description: "\nApis management"
+  -
+    name: 'API Rombel'
+    description: "\nApis management"
+  -
+    name: 'API Siswa'
+    description: "\nApis management"
+  -
+    name: 'API Tahun Ajaran'
+    description: "\nApis management"
+  -
+    name: 'API Walas '
+    description: "\nApis management"
+  -
+    name: Endpoints
+    description: ''
